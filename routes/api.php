@@ -21,5 +21,6 @@ Route::get("/event", [EventsController::class, "get"]);
 Route::post("/event", [EventsController::class, "post"]);
 Route::put("/event", [EventsController::class, "put"]);
 Route::get("/event/search", [EventsController::class, "search"]);
+Route::get("/event/{id}", [EventsController::class, "detail"]);
 Route::post("/follow", [FollowsController::class, "post"]);
 Route::get("/tweet", [TweetsController::class, "get"]);

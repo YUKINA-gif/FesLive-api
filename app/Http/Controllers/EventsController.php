@@ -176,4 +176,30 @@ class EventsController extends Controller
             ], 404);
         }
     }
+
+    /**
+     * [GET]イベント情報詳細を取得
+     *
+     *イベント情報詳細を取得する
+     * 
+     * @access public
+     * @param Request $request リクエストパラメータ
+     * @return Response イベント情報詳細取得、もしくは404で返す
+     * @var string $events イベント情報詳細
+     */
+    public function detail(Request $request)
+    {
+        $event = Event::where("id",$request->id)->first();
+
+        if ($event) {
+            return response()->json([
+                "message" => "Get events successfully",
+                "event" => $event
+            ], 200);
+        } else {
+            return response()->json([
+                "message" => "Not found"
+            ], 404);
+        }
+    }
 }
