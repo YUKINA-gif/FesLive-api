@@ -5,8 +5,30 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
+/**
+ * [API]ホームタイムライン取得API class
+ * 
+ * ホームタイムラインに関するコントローラー
+ * ホームタイムライン情報の取得、保存
+ * 
+ * @access public
+ * @author Nakanishi Yukina
+ * @category User
+ * @package Controller
+ */
 class EventsController extends Controller
 {
+    /**
+     * [POST]イベント情報を保存する
+     *
+     *イベント情報を保存する
+     * 
+     * @access public
+     * @param Request $request リクエストパラメータ
+     * @return Response  イベント情報を保存、もしくは404で返す
+     * @var array $event  新規レコード
+     * @var array $save_event イベント情報を保存する
+     */
     public function post(Request $request)
     {
         $event = new Event();
@@ -48,6 +70,17 @@ class EventsController extends Controller
 
     public function put(Request $request)
     {
+        /**
+         * [PUT]イベント情報を更新する
+         *
+         *イベント情報を更新する
+         * 
+         * @access public
+         * @param Request $request リクエストパラメータ
+         * @return Response  イベント情報を更新、もしくは404で返す
+         * @var array $update_data  更新データ
+         * @var array $event イベント情報を更新する
+         */
         // バリデーション設定
         $request->validate([
             "name" => ['required', 'string'],
@@ -88,6 +121,17 @@ class EventsController extends Controller
 
     public function search(Request $request)
     {
+        /**
+         * [GET]アカウントを探す
+         *
+         *アカウントを探す
+         * 
+         * @access public
+         * @param Request $request リクエストパラメータ
+         * @return Response  アカウントを取得、もしくは404で返す
+         * @var string $keyword  検索キーワード
+         * @var array $search アカウントを探して10件取得する
+         */
         $keyword = $request->keyword;
 
         $search = \Twitter::get('users/search', [
