@@ -2,53 +2,108 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventsController extends Controller
 {
-    public function get(Request $request)
-    {
-        $data = \Twitter::get('statuses/home_timeline', [
-            //  リプライを含めない
-            "exclude_replies" => "true",
-            //  リツイートを含めない
-            "include_rts" => "false",
-        ]);
-        foreach ($data as $tweet) {     
-              return response()->json([
-                $tweet
-            ], 200);
-        }
-        
-    }
-
     public function post(Request $request)
     {
-        $data = \Twitter::post('friendships/create', [
-            "screen_name" => $request->name,
-            "follow" => "true"
+        $event = new Event();
+        // バリデーション設定
+        $request->validate([
+            "name" => ['required', 'string'],
+            "tw_account" => ['required', 'string'],
+            "image" => ['required'],
+            "address" => ['required', 'string'],
+            "event_start_date" => ['required', 'date'],
+            "event_2_date" => ['date'],
+            "event_3_date" => ['date'],
+            "event_4_date" => ['date'],
+            "event_last_date" => ['required', 'date']
         ]);
 
-        return response()->json([
-            "data" => $data
-        ], 200);
+        $save_event = $event->fill([
+            "name" => $request->name,
+            "tw_account" => $request->tw_account,
+            "image" => $request->image,
+            "address" => $request->address,
+            "event_start_date" => $request->event_start_date,
+            "event_2_date" => $request->event_2_date,
+            "event_3_date" => $request->event_3_date,
+            "event_4_date" => $request->event_4_date,
+            "event_last_date" => $request->event_last_date,
+        ])->save();
+
+        if ($save_event) {
+            return response()->json([
+                "message" => "Event created successfully",
+            ], 200);
+        } else {
+            return response()->json([
+                "message" => "Could not process normally",
+            ], 404);
+        }
     }
 
     public function put(Request $request)
     {
-        $data = \Twitter::get('followers/ids', ["screen_name"]);
+        // バリデーション設定
+        $request->validate([
+            "name" => ['required', 'string'],
+            "tw_account" => ['required', 'string'],
+            "image" => ['required'],
+            "address" => ['required', 'string'],
+            "event_start_date" => ['required', 'date'],
+            "event_2_date" => ['date'],
+            "event_3_date" => ['date'],
+            "event_4_date" => ['date'],
+            "event_last_date" => ['required', 'date']
+        ]);
 
-        return response()->json([
-            "data" => $data
-        ], 200);
+        $update_data = [
+            "name" => $request->name,
+            "tw_account" => $request->tw_account,
+            "image" => $request->image,
+            "address" => $request->address,
+            "event_start_date" => $request->event_start_date,
+            "event_2_date" => $request->event_2_date,
+            "event_3_date" => $request->event_3_date,
+            "event_4_date" => $request->event_4_date,
+            "event_last_date" => $request->event_last_date,
+        ];
+
+        $event = Event::where("id", $request->id)->update($update_data);
+
+        if ($event) {
+            return response()->json([
+                "message" => "Event updated successfully",
+            ], 200);
+        } else {
+            return response()->json([
+                "message" => "Could not process normally",
+            ], 404);
+        }
     }
 
-    public function delete(Request $request)
+    public function search(Request $request)
     {
-        $data = \Twitter::get('followers/ids', ["screen_name"]);
+        $keyword = $request->keyword;
 
-        return response()->json([
-            "data" => $data
-        ], 200);
+        $search = \Twitter::get('users/search', [
+            "q" => $keyword,
+            "count" => 10
+        ]);
+
+        if ($search) {
+            return response()->json([
+                "message" => "Get account successfully",
+                "account" => $search
+            ], 200);
+        } else {
+            return response()->json([
+                "message" => "Not found"
+            ], 404);
+        }
     }
 }

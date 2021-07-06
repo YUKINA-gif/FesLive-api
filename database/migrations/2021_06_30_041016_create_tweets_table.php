@@ -15,9 +15,11 @@ class CreateTweetsTable extends Migration
     {
         Schema::create('tweets', function (Blueprint $table) {
             $table->id();
+            $table->string("tweet_id")->unique();
             $table->string("name");
-            $table->string("text");
-            $table->string("url");
+            $table->string("image");
+            $table->text("text");
+            $table->string("url")->nullable();
             $table->timestamps();
         });
     }

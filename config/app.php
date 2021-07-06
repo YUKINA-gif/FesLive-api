@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -122,6 +122,15 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
+
+      /*
+    |--------------------------------------------------------------------------
+    | Slack
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    'slack_url' => env('SLACK_URL'),
 
     /*
     |--------------------------------------------------------------------------
@@ -175,7 +184,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\TwitterServiceProvider::class,
-
+        App\Providers\SlackServiceProvider::class,
     ],
 
     /*
@@ -229,7 +238,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Twitter' => App\Facades\Twitter::class,
-
+        'Slack' => App\Services\Slack\SlackFacade::class,
     ],
 
 ];

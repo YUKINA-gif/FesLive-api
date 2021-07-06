@@ -17,9 +17,8 @@ use App\Http\Controllers\TweetsController;
 |
 */
 
-Route::post("/event", [EventsController::class, "get"]);
 Route::post("/event", [EventsController::class, "post"]);
 Route::put("/event", [EventsController::class, "put"]);
-Route::delete("/event", [EventsController::class, "delete"]);
-Route::get("/follow", [FollowsController::class, "index"]);
-Route::post("/tweet", [TweetsController::class, "post"]);
+Route::get("/event/search", [EventsController::class, "search"]);
+Route::post("/follow", [FollowsController::class, "post"]);
+Route::get("/tweet", [TweetsController::class, "get"]);
