@@ -4,12 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\Tweet;
 
+/**
+ * [API]DB(tweets)表示API class
+ * 
+ * ツイート表示に関するコントローラー
+ * DBに保存したツイート情報の表示
+ * 
+ * @access public
+ * @author Nakanishi Yukina
+ * @category User
+ * @package Controller
+ */
 class TweetsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * [GET]ツイート情報の表示
      *
-     * @return \Illuminate\Http\Response
+     *　ツイート情報を表示する
+     * 
+     * @access public
+     * @return Response  ツイート情報を表示、ない場合は404で返す
      */
     public function get()
     {
