@@ -19,6 +19,32 @@ use Illuminate\Http\Request;
 class EventsController extends Controller
 {
     /**
+     * [GET]イベント情報を取得
+     *
+     *イベント情報を取得する
+     * 
+     * @access public
+     * @param Request $request リクエストパラメータ
+     * @return Response イベント情報を取得、もしくは404で返す
+     * @var string $events イベント情報
+     */
+    public function get()
+    {
+        $events = Event::all();
+
+        if ($events) {
+            return response()->json([
+                "message" => "Get events successfully",
+                "events" => $events
+            ], 200);
+        } else {
+            return response()->json([
+                "message" => "Not found"
+            ], 404);
+        }
+    }
+
+    /**
      * [POST]イベント情報を保存する
      *
      *イベント情報を保存する

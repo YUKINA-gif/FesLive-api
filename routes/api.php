@@ -17,6 +17,7 @@ use App\Http\Controllers\TweetsController;
 |
 */
 
+Route::get("/event", [EventsController::class, "get"]);
 Route::post("/event", [EventsController::class, "post"]);
 Route::put("/event", [EventsController::class, "put"]);
 Route::get("/event/search", [EventsController::class, "search"]);
