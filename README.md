@@ -1,62 +1,182 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# FesLive API
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+イベント情報取得APIです。
 
-## About Laravel
+## Prerequisites
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   PHP 7.4.15
+-   Laravel 8.4
+-   MySQL 8.0
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## API Document
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+[GET] イベント情報を取得します
 
-## Learning Laravel
+```
+/event
+```
+レスポンス
+```
+{
+  message: Get events successfully,
+  events:  {
+            "id": 1,
+            "name": "京都大作戦",
+            "tw_account": "MI_KYOTO",
+            "image": "https://pbs.twimg.com/profile_images/1368759336034439170/aoIxfmNm_normal.jpg",
+            "address": "京都府宇治市広野町八軒屋谷１",
+            "event_start_date": "2021-07-03",
+            "event_2_date": "2021-07-04",
+            "event_3_date": "2021-07-10",
+            "event_4_date": null,
+            "event_last_date": "2021-07-11"
+            },
+}
+```
+[POST] イベント情報を登録します
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+/event
+```
+リクエスト
+```
+{
+  "name": "event name",
+  "tw_account": "EVENT_ACCOUNT",
+  "image":"https://pbs.twimg.com/profile_images/〇〇〇.jpg",
+  "address": "event address",
+  "event_start_date":2021-08-30,
+  "event_last_date":2021-08-31,
+}
+```
+レスポンス
+```
+{
+  "message": "Event created successfully"
+}
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+[PUT] イベント情報を更新します
 
-## Laravel Sponsors
+```
+/event
+```
+リクエスト
+```
+{
+  "name": "event update name",
+  "tw_account": "EVENT_UPDATE_ACCOUNT",
+  "image":"https://pbs.twimg.com/profile_images/〇〇〇.jpg",
+  "address": event update address,
+  "event_start_date":2021-09-20,
+  "event_last_date":2021-09-21,
+}
+```
+レスポンス
+```
+{
+  "message": "Event updated successfully"
+}
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+[GET]twitterアカウント検索
+```
+/event/search?keyword=FM802RADIOCRAZY
+```
+レスポンス
+```
+{
+  "message": "Get account successfully",
+  "account": [
+  {
+    "id": 93565243,
+    "id_str": "93565243",
+    "name": "FM802 RADIO CRAZY",
+    "screen_name": "FM802RADIOCRAZY",
+    "location": "大阪市北区天神橋筋二丁目／南森町",
+    "description": "@FM802_PR が送るロック大忘年会「RADIO CRAZY」！2021年2月中旬延期検討中！お問合せはこちらでは受付ておりません。 #レディクレ #FM802 聴く⇨https://t.co/jA4CRwe663",
+    "url": "https://t.co/CWTezNXqj7",
+    "entities": {
+    "url": {
+    "urls": [
+      {
+    "url": "https://t.co/CWTezNXqj7",
+    "expanded_url": "https://radiocrazy.fm",
+    "display_url": "radiocrazy.fm",
+    "indices": [
+      0,
+      23
+    ],
+    }
+  ],
+}…
+```
+[GET] イベント詳細データ取得
+```
+/event/5
+```
+レスポンス
+```
+{
+  "message": "Get events successfully",
+  "event": {
+  "id": 5,
+  "name": "FM802 RADIO CRAZY",
+  "tw_account": "FM802RADIOCRAZY",
+  "image": "https://pbs.twimg.com/profile_images/1324683656594481152/UsDXRqDY_normal.jpg",
+  "address": "大阪府大阪市住之江区南港北1丁目5-102",
+  "event_start_date": "2021-12-26",
+  "event_2_date": null,
+  "event_3_date": null,
+  "event_4_date": null,
+  "event_last_date": "2021-12-27"
+  }
+}
+```
+[POST]フォロー
 
-### Premium Partners
+[PUT]フォローしなおす
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[DELETE]フォロー解除
+```
+/follow
+```
+リクエスト
+```
+{
+  "event_id":5,
+  "tw_account":"FM802RADIOCRAZY"
+}
+```
+レスポンス
+```
+<!-- 登録 -->
+{
+  "message":"Followed successfully"
+}
+<!-- すでにデータがあり、削除されていれば再度フォロー -->
+{
+  "message":"Follow restored successfully"
+}
+<!-- すでに登録されていればフォロー解除 -->
+{
+  "message":"Follow deleted successfully"
+}
+```
+[GET]タイムラインの取得
+```
+/tweet
+```
+レスポンス
+```
+"tweet": [
+  {
+    "id": 1,
+    "tweet_id": "1412009306300370946",
+    "name": "RUSH BALL",
+    "image": "https://pbs.twimg.com/profile_images/1344910758719541248/MfcaWJ1N_normal.jpg",
+    "text": "もう夏ですね いやはや",
+    "url": "https://t.co/Ht8R6LEVDS",
+    "updated_at": "2021-07-05T13:54:38.000000Z"
+  },
+```
