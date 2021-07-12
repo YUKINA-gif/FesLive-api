@@ -184,7 +184,7 @@ class EventSeeder extends Seeder
             "name" => "SUPERSONIC",
             "tw_account" => "summer_sonic",
             "image" => "https://pbs.twimg.com/profile_images/1399199736939220994/xqOp_GBA.jpg",
-            "city_name_name" => "chiba",
+            "city_name" => "chiba",
             "address" => "千葉県千葉市美浜区美浜1",
             "event_start_date" => "2021-09-18",
             "event_last_date" => "2021-09-19",
