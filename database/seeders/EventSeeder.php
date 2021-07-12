@@ -96,7 +96,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "イナズマロック フェス 2021",
             "tw_account" => "irf_official",
-            "image" => "https://pbs.twimg.com/profile_images/1325709784503386113/nnOGb6Ef_normal.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1325709784503386113/nnOGb6Ef.jpg",
             "address" => "滋賀県草津市下物町1091",
             "event_start_date" => "2020-09-18",
             "event_last_date" => "2020-09-19",
@@ -108,7 +108,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "NUMBER SHOT",
             "tw_account" => "NUMBERSHOT_",
-            "image" => "http://pbs.twimg.com/profile_images/1397115642579329027/xxE-2E85_normal.jpg",
+            "image" => "http://pbs.twimg.com/profile_images/1397115642579329027/xxE-2E85.jpg",
             "address" => "福岡県福岡市中央区地行浜2丁目2-2",
             "event_start_date" => "2020-07-17",
             "event_last_date" => "2020-07-18",
@@ -120,7 +120,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "METROCK",
             "tw_account" => "METROCK_pr",
-            "image" => "https://pbs.twimg.com/profile_images/1391589004320002052/yWXm3jTH_normal.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1391589004320002052/yWXm3jTH.jpg",
             "address" => "東京都江東区新木場・若洲公園&大阪府堺市堺区匠町6-1",
             "event_start_date" => "2020-05-15",
             "event_last_date" => "2020-05-16",
@@ -132,7 +132,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "VIVA LA ROCK",
             "tw_account" => "vivarockjp",
-            "image" => "https://pbs.twimg.com/profile_images/1371297440398077963/HiYeiO-J_normal.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1371297440398077963/HiYeiO-J.jpg",
             "address" => "埼玉県さいたま市中央区新都心８",
             "event_start_date" => "2021-05-01",
             "event_2_date" => "2021-05-02",
@@ -147,7 +147,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "MERRY ROCK PARADE",
             "tw_account" => "merryrockparade",
-            "image" => "https://pbs.twimg.com/profile_images/1301998082939379720/nXnwhQP2_normal.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1301998082939379720/nXnwhQP2.jpg",
             "address" => "名古屋県名古屋市港区金城ふ頭二丁目二番地",
             "event_start_date" => "2020-12-19",
             "event_last_date" => "2020-12-20",
@@ -159,7 +159,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "RISING SUN ROCK FESTIVAL",
             "tw_account" => "rsrfes_official",
-            "image" => "https://pbs.twimg.com/profile_images/1363716661115637760/Z6Gcdkbr_normal.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1363716661115637760/Z6Gcdkbr.jpg",
             "address" => "北海道石狩市新港中央1丁目",
             "event_start_date" => "2021-08-13",
             "event_last_date" => "2021-08-14",
@@ -171,7 +171,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "SUPERSONIC",
             "tw_account" => "summer_sonic",
-            "image" => "https://pbs.twimg.com/profile_images/1399199736939220994/xqOp_GBA_normal.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1399199736939220994/xqOp_GBA.jpg",
             "address" => "千葉県千葉市美浜区美浜1",
             "event_start_date" => "2021-09-18",
             "event_last_date" => "2021-09-19",
@@ -183,7 +183,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "SWEET LOVE SHOWER",
             "tw_account" => "sls_sstv",
-            "image" => "https://pbs.twimg.com/profile_images/1397477944235159560/Nbix7ZHj_normal.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1397477944235159560/Nbix7ZHj.jpg",
             "address" => "山梨県南都留群山中湖村平野479-2",
             "event_start_date" => "2021-08-27",
             "event_2_date" => "2021-08-28",
@@ -196,7 +196,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "DEAD POP FESTiVAL",
             "tw_account" => "DEADPOP_FEST",
-            "image" => "https://pbs.twimg.com/profile_images/1382979625320550407/kcLltt2N_normal.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1382979625320550407/kcLltt2N.jpg",
             "address" => "神奈川県川崎市川崎区東扇島58-1",
             "event_start_date" => "2021-06-26",
             "event_last_date" => "2021-06-27",
@@ -208,7 +208,7 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "FUJI ROCK FESTIVAL",
             "tw_account" => "fujirock_jp",
-            "image" => "https://pbs.twimg.com/profile_images/1382880265115082756/Q70H7Jno_normal.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1382880265115082756/Q70H7Jno.jpg",
             "address" => "新潟県南魚沼郡湯沢町三国202",
             "event_start_date" => "2021-08-20",
             "event_2_date" => "2021-08-21",
