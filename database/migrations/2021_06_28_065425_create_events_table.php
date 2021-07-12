@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->string("tw_account");
             $table->string("image");
             $table->string("address");
+            $table->string("city_name");
             $table->date("event_start_date");
             $table->date("event_2_date")->nullable();
             $table->date("event_3_date")->nullable();
