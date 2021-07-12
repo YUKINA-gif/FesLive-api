@@ -185,6 +185,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\TwitterServiceProvider::class,
         App\Providers\SlackServiceProvider::class,
+        Dnsimmons\OpenWeather\OpenWeatherServiceProvider::class,
     ],
 
     /*
@@ -239,6 +240,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Twitter' => App\Facades\Twitter::class,
         'Slack' => App\Services\Slack\SlackFacade::class,
+        'OpenWeather' => Dnsimmons\OpenWeather\OpenWeather::class,
     ],
 
 ];
