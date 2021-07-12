@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b158f48239ff153ecb9f6190ef987168",
+    "content-hash": "f2089f778e01984149bbd5f5cf2f865b",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -254,6 +254,43 @@
                 }
             ],
             "time": "2021-06-07T13:58:28+00:00"
+        },
+        {
+            "name": "dnsimmons/openweather",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnsimmons/openweather.git",
+                "reference": "4c555e6f9420affbeb781cf3331ee6826eeb1dba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnsimmons/openweather/zipball/4c555e6f9420affbeb781cf3331ee6826eeb1dba",
+                "reference": "4c555e6f9420affbeb781cf3331ee6826eeb1dba",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dnsimmons\\OpenWeather\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Simmons",
+                    "email": "hello@dsimmons.me"
+                }
+            ],
+            "description": "OpenWeather is a Laravel package simplifying working with the free Open Weather Map APIs.",
+            "support": {
+                "issues": "https://github.com/dnsimmons/openweather/issues",
+                "source": "https://github.com/dnsimmons/openweather/tree/master"
+            },
+            "time": "2020-07-14T01:16:41+00:00"
         },
         {
             "name": "doctrine/inflector",

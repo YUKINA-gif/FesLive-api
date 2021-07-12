@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Tweet;
+use App\Models\Weather;
 use App\Models\Follow;
 
 class Event extends Model
@@ -31,5 +31,10 @@ class Event extends Model
     public function follow()
     {
         return $this->belongsTo(Follow::class);
+    }
+
+    public function weather()
+    {
+        return $this->hasMany(Weather::class);
     }
 }

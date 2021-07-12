@@ -27,7 +27,12 @@ class TweetsController extends Controller
      */
     public function get()
     {
-        $tweet = Tweet::orderBy('created_at', 'desc')->get();
+        $tweet = Tweet::
+        where('text', 'like', '%' . "先行" . '%')
+        ->orWhere('text', 'like', '%' . "開催決定" . '%')
+        ->orWhere('text', 'like', '%' . "グッズ" . '%')
+        ->orWhere('text', 'like', '%' . "発表" . '%')
+        ->orderBy('created_at', 'desc')->get();
 
         if ($tweet) {
             return response()->json([
