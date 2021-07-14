@@ -2,12 +2,53 @@
 
 イベント情報取得APIです。
 
-## Prerequisites
+## バージョン
 
 -   PHP 7.4.15
 -   Laravel 8.4
 -   MySQL 8.0
 
+## テーブル設計
+|events  |　|　|　|　|　|
+| --- | --- |--- |--- |--- |--- |
+| カラム名 | 型 | PRIMARY KEY |UNIQUE KEY |NOT NULL |FOREIGN KEY |
+| id | unsigned bigint |○ | |○ | |
+| name | varchar | ||○| | |
+| tw_account | varchar | ||○| | |
+| image | varchar | ||○| | |
+| address | varchar | ||○| | |
+| city_name | varchar | ||○| | |
+| event_start_date | varchar | ||○| | |
+| event_2_date | varchar | ||| | |
+| event_3_date | varchar | ||| | |
+| event_4_date | varchar | ||| | |
+| event_last_date | varchar | ||○| | |
+| created_at | timestamp | ||| | |
+| updated_at | timestamp | ||| | |
+
+|follows  |　|　|　|　|　|
+| --- | --- |--- |--- |--- |--- |
+| カラム名 | 型 | PRIMARY KEY |UNIQUE KEY |NOT NULL |FOREIGN KEY |
+| id | unsigned bigint |○ | |○ | |
+| event_id | int | ||○| | |
+| is_follow | boolean | ||○| | |
+| created_at | timestamp | ||| | |
+| updated_at | timestamp | ||| | |
+
+|tweets  |　|　|　|　|　|
+| --- | --- |--- |--- |--- |--- |
+| カラム名 | 型 | PRIMARY KEY |UNIQUE KEY |NOT NULL |FOREIGN KEY |
+| id | unsigned bigint |○ | |○ | |
+| tweet_id | varchar | ||○| | |
+| name | varchar | ||○| | |
+| image | varchar | ||○| | |
+| text | varchar | ||○| | |
+| created_at | varchar | ||| | |
+| updated_at | varchar | ||| | |
+
+
+## API設計
+<img src="https://yn-portfolio.s3.ap-northeast-3.amazonaws.com/feslive-api.png"></img>
 ## API Document
 
 [GET] イベント情報を取得します
