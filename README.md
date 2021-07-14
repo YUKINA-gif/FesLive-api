@@ -48,7 +48,8 @@
 
 
 ## API設計
-<img src="https://yn-portfolio.s3.ap-northeast-3.amazonaws.com/feslive-api.png"></img>
+<img src="https://yn-portfolio.s3.ap-northeast-3.amazonaws.com/feslive_api.png"></img>
+
 ## API Document
 
 [GET] イベント情報を取得します
