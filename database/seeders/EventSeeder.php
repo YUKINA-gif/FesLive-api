@@ -88,12 +88,12 @@ class EventSeeder extends Seeder
         $param = [
             "name" => "WILD BUNCH FEST.",
             "tw_account" => "WildBunchFest",
-            "image" => "https://pbs.twimg.com/profile_images/1048200166480609280/30sqYalX.jpg",
+            "image" => "https://pbs.twimg.com/profile_images/1414782157428453379/hvJ-1T_-.jpg",
             "address" => "山口県山口市阿知須山口きらら博記念公園",
             "city_name" => "yamaguchi",
-            "event_start_date" => "2020-09-19",
-            "event_2_date" => "2020-09-20",
-            "event_last_date" => "2020-09-21",
+            "event_start_date" => "2021-09-18",
+            "event_2_date" => "2021-09-19",
+            "event_last_date" => "2021-09-20",
         ];
         DB::table("events")->insert(
             $param
